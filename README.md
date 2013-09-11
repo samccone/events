@@ -2,7 +2,7 @@
 
 ### Events
 
-a litte fun rendering an ical esk calendar with overlapping events
+a litte fun rendering an ical-esque calendar with overlapping events
 
 
 
