@@ -24,14 +24,10 @@ class FE.Events extends Backbone.Collection
     groups
 
   grouped: ->
-    events          = []
     rangeReduce     = @eventRanges()
     initalRanges    = rangeReduce.length
 
     for i in [0...initalRanges]
       rangeReduce = rangeReduce.eventRanges()
 
-    rangeReduce.each (r) =>
-      events.push @eventsByRange(r.attributes)
-
-    events
+    rangeReduce.map (r) => @eventsByRange(r.attributes)

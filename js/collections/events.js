@@ -48,18 +48,16 @@
     };
 
     Events.prototype.grouped = function() {
-      var events, i, initalRanges, rangeReduce, _i,
+      var i, initalRanges, rangeReduce, _i,
         _this = this;
-      events = [];
       rangeReduce = this.eventRanges();
       initalRanges = rangeReduce.length;
       for (i = _i = 0; 0 <= initalRanges ? _i < initalRanges : _i > initalRanges; i = 0 <= initalRanges ? ++_i : --_i) {
         rangeReduce = rangeReduce.eventRanges();
       }
-      rangeReduce.each(function(r) {
-        return events.push(_this.eventsByRange(r.attributes));
+      return rangeReduce.map(function(r) {
+        return _this.eventsByRange(r.attributes);
       });
-      return events;
     };
 
     return Events;
