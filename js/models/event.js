@@ -18,6 +18,10 @@
       return this.get('start') <= m.get('end') && this.get('end') >= m.get('start');
     };
 
+    Event.prototype.length = function() {
+      return this.get('end') - this.get('start');
+    };
+
     Event.prototype.extendToInclude = function(m) {
       if (m.get('start') < this.get('start')) {
         this.set('start', m.get('start'));

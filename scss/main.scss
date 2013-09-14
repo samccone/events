@@ -4,6 +4,7 @@
 $blue: rgb(59, 89, 152);
 $day-fill: #ececec;
 $internal-spacing: 8px;
+$flag-width: 4px;
 
 * {
   @include box-sizing(border-box);
@@ -19,14 +20,27 @@ $internal-spacing: 8px;
 }
 
 .event {
+  left:         0;
   border:       solid 1px darken($day-fill, 10%);
-  padding:      $internal-spacing;
-  position:     relative;
+  position:     absolute;
   background:   #FFF;
-  border-left:  solid 6px $blue;
-
+  border-left:  0;
   font: {
     family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+  }
+
+  .copy {
+    padding: $internal-spacing;
+    margin-left: $flag-width;
+  }
+
+  .flag {
+    top:        0;
+    left:       0;
+    width:      $flag-width;
+    height:     100%;
+    position:   absolute;
+    background: $blue;
   }
 }
 

@@ -3,9 +3,20 @@
 class FE.Events extends Backbone.Collection
   model: FE.Event
 
-  eventsByRange: (range) ->
-    _fauxEvent = new FE.Event(range)
-    @filter (_event) -> _event.overlapsWith(_fauxEvent)
+  comparator: (m) ->
+    return m.get('start')
+
+  eventsByRange: (m) ->
+    @filter (_event) ->
+      _event isnt m and _event.overlapsWith(m)
+
+  groupFor: (model) ->
+    groups = @grouped()
+    index = 0
+    _.forEach groups, (g, i) ->
+      if ~g.indexOf(model)
+        index = i
+    groups[index]
 
   eventRanges: ->
     groups = new FE.Events
@@ -30,4 +41,4 @@ class FE.Events extends Backbone.Collection
     for i in [0...initalRanges]
       rangeReduce = rangeReduce.eventRanges()
 
-    rangeReduce.map (r) => @eventsByRange(r.attributes)
+    rangeReduce.map (r) => @eventsByRange(r)

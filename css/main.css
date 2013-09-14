@@ -63,14 +63,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 8, ../scss/main.scss */
+/* line 9, ../scss/main.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 12, ../scss/main.scss */
+/* line 13, ../scss/main.scss */
 .day {
   width: 700px;
   margin: 0 auto;
@@ -80,17 +80,31 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   background: #ececec;
 }
 
-/* line 21, ../scss/main.scss */
+/* line 22, ../scss/main.scss */
 .event {
+  left: 0;
   border: solid 1px lightgrey;
-  padding: 8px;
-  position: relative;
+  position: absolute;
   background: #FFF;
-  border-left: solid 6px #3b5998;
+  border-left: 0;
   font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
 }
+/* line 32, ../scss/main.scss */
+.event .copy {
+  padding: 8px;
+  margin-left: 4px;
+}
+/* line 37, ../scss/main.scss */
+.event .flag {
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  background: #3b5998;
+}
 
-/* line 33, ../scss/main.scss */
+/* line 47, ../scss/main.scss */
 .event-title {
   color: #3b5998;
   margin-bottom: 2px;
@@ -98,7 +112,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-weight: bold;
 }
 
-/* line 43, ../scss/main.scss */
+/* line 57, ../scss/main.scss */
 .event-location {
   color: #acacac;
   font-size: 10px;

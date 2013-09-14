@@ -16,12 +16,26 @@
 
     Events.prototype.model = FE.Event;
 
-    Events.prototype.eventsByRange = function(range) {
-      var _fauxEvent;
-      _fauxEvent = new FE.Event(range);
+    Events.prototype.comparator = function(m) {
+      return m.get('start');
+    };
+
+    Events.prototype.eventsByRange = function(m) {
       return this.filter(function(_event) {
-        return _event.overlapsWith(_fauxEvent);
+        return _event !== m && _event.overlapsWith(m);
       });
+    };
+
+    Events.prototype.groupFor = function(model) {
+      var groups, index;
+      groups = this.grouped();
+      index = 0;
+      _.forEach(groups, function(g, i) {
+        if (~g.indexOf(model)) {
+          return index = i;
+        }
+      });
+      return groups[index];
     };
 
     Events.prototype.eventRanges = function() {
@@ -56,7 +70,7 @@
         rangeReduce = rangeReduce.eventRanges();
       }
       return rangeReduce.map(function(r) {
-        return _this.eventsByRange(r.attributes);
+        return _this.eventsByRange(r);
       });
     };
 

@@ -18,7 +18,7 @@
 
     Event.prototype.className = 'event';
 
-    Event.prototype.template = _.template("<h5 class='event-title'>Sample Item</h5><p class='event-location'>Sample Location</p>");
+    Event.prototype.template = _.template("<div class='flag'></div><div class='copy'><h5 class='event-title'>Sample Item</h5><p class='event-location'>Sample Location</p></div>");
 
     return Event;
 

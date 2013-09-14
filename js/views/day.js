@@ -18,6 +18,20 @@
 
     Day.prototype.className = 'day';
 
+    Day.prototype.appendHtml = function(collectionView, itemView, index) {
+      var left, overlaps, width;
+      overlaps = Math.max(1, collectionView.collection.groupFor(itemView.model).length - 1);
+      width = 100 / overlaps;
+      left = index % overlaps * width;
+      itemView.$el.css({
+        'top': itemView.model.get('start') + "px",
+        'left': left + "%",
+        'height': itemView.model.length() + "px",
+        'width': width + "%"
+      });
+      return this.$el.append(itemView.el);
+    };
+
     Day.prototype.itemView = FE.Views.Event;
 
     return Day;
