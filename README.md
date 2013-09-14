@@ -22,7 +22,7 @@ a litte fun rendering an ical-esque calendar with overlapping events
     ])
 ```
 
-!()[http://dl.dropboxusercontent.com/u/47552986/Screenshots/g4.png]
+![](http://dl.dropboxusercontent.com/u/47552986/Screenshots/g4.png)
 
 ##### Compiling
 ```
