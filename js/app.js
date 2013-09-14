@@ -3,7 +3,37 @@
   this.FE || (this.FE = {});
 
   this.layOutDay = FE.build = function(events) {
-    return events = new FE.Events(events);
+    return this.FE.EventApp.Content.show(new FE.Views.Day({
+      collection: new FE.Events(events)
+    }));
+  };
+
+  this.FE.EventApp = new Backbone.Marionette.Application();
+
+  this.FE.EventApp.addRegions({
+    Content: '#content'
+  });
+
+  this.FE.EventApp.addInitializer(function() {
+    return window.layOutDay([
+      {
+        start: 30,
+        end: 150
+      }, {
+        start: 540,
+        end: 600
+      }, {
+        start: 560,
+        end: 620
+      }, {
+        start: 610,
+        end: 670
+      }
+    ]);
+  });
+
+  window.onload = function() {
+    return this.FE.EventApp.start();
   };
 
 }).call(this);

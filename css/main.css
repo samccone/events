@@ -62,3 +62,44 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
+
+/* line 8, ../scss/main.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 12, ../scss/main.scss */
+.day {
+  width: 700px;
+  margin: 0 auto;
+  height: 1000px;
+  padding: 0 8px;
+  position: relative;
+  background: #ececec;
+}
+
+/* line 21, ../scss/main.scss */
+.event {
+  border: solid 1px lightgrey;
+  padding: 8px;
+  position: relative;
+  background: #FFF;
+  border-left: solid 6px #3b5998;
+  font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+}
+
+/* line 33, ../scss/main.scss */
+.event-title {
+  color: #3b5998;
+  margin-bottom: 2px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* line 43, ../scss/main.scss */
+.event-location {
+  color: #acacac;
+  font-size: 10px;
+}

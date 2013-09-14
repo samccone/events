@@ -1,2 +1,46 @@
 @import "compass";
 @import "compass/reset";
+
+$blue: rgb(59, 89, 152);
+$day-fill: #ececec;
+$internal-spacing: 8px;
+
+* {
+  @include box-sizing(border-box);
+}
+
+.day {
+  width:      700px;
+  margin:     0 auto;
+  height:     1000px;
+  padding:    0 $internal-spacing;
+  position:   relative;
+  background: $day-fill;
+}
+
+.event {
+  border:       solid 1px darken($day-fill, 10%);
+  padding:      $internal-spacing;
+  position:     relative;
+  background:   #FFF;
+  border-left:  solid 6px $blue;
+
+  font: {
+    family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+  }
+}
+
+.event-title {
+  color:         $blue;
+  margin-bottom: 2px;
+
+  font: {
+    size:   13px;
+    weight: bold;
+  }
+}
+
+.event-location {
+  color: darken($day-fill, 25%);
+  font-size: 10px;
+}
