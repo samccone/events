@@ -20,7 +20,7 @@ a litte fun rendering an ical-esque calendar with overlapping events
         {start: 11, end: 200}
         {start: 901, end: 990}
     ])
-``
+```
 
 !()[http://dl.dropboxusercontent.com/u/47552986/Screenshots/g4.png]
 
