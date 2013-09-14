@@ -12,10 +12,10 @@ class FE.Views.Day extends Marionette.CollectionView
     left  = index % overlaps * width
 
     itemView.$el.css
-      'top': itemView.model.get('start')+"px"
-      'left': left + "%"
-      'height': itemView.model.length()+"px"
-      'width': width+"%"
+      'top':    "#{itemView.model.get('start')}px"
+      'left':   "#{left}%"
+      'width':  "#{width}%"
+      'height': "#{itemView.model.length()}px"
 
     @$el.append itemView.el
 
