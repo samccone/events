@@ -86,7 +86,7 @@ body {
   width: 100%;
   margin: 0 auto;
   max-width: 850px;
-  min-width: 630px;
+  min-width: 620px;
 }
 
 /* line 29, ../scss/main.scss */
@@ -101,48 +101,47 @@ body {
 
 /* line 37, ../scss/main.scss */
 .day {
-  height: 735px;
-  padding: 0 8px;
+  padding: 0 10px;
   position: relative;
   background: #ececec;
   border-left: solid 1px lightgrey;
 }
 
-/* line 45, ../scss/main.scss */
+/* line 44, ../scss/main.scss */
 .times {
-  padding-right: 8px;
+  padding-right: 10px;
 }
-/* line 48, ../scss/main.scss */
+/* line 47, ../scss/main.scss */
 .times li {
   height: 30px;
   text-align: right;
   line-height: 15px;
 }
-/* line 54, ../scss/main.scss */
+/* line 53, ../scss/main.scss */
 .times .med {
   color: #636363;
 }
-/* line 56, ../scss/main.scss */
+/* line 55, ../scss/main.scss */
 .times .med .time {
   font-size: 13px;
   font-weight: bold;
 }
-/* line 64, ../scss/main.scss */
+/* line 63, ../scss/main.scss */
 .times .small {
   margin-left: 3px;
 }
-/* line 66, ../scss/main.scss */
+/* line 65, ../scss/main.scss */
 .times .small span {
   display: none;
 }
 
-/* line 72, ../scss/main.scss */
+/* line 71, ../scss/main.scss */
 .small {
   font-size: 9px;
   color: #A3A3A3;
 }
 
-/* line 77, ../scss/main.scss */
+/* line 76, ../scss/main.scss */
 .events {
   top: 0;
   left: 2.5%;
@@ -150,7 +149,7 @@ body {
   position: absolute;
 }
 
-/* line 84, ../scss/main.scss */
+/* line 83, ../scss/main.scss */
 .event {
   left: 0;
   border: solid 1px lightgrey;
@@ -158,12 +157,12 @@ body {
   background: #FFF;
   border-left: 0;
 }
-/* line 91, ../scss/main.scss */
+/* line 90, ../scss/main.scss */
 .event .copy {
-  padding: 8px;
+  padding: 10px;
   margin-left: 4px;
 }
-/* line 96, ../scss/main.scss */
+/* line 95, ../scss/main.scss */
 .event .flag {
   top: 0;
   left: 0;
@@ -173,7 +172,7 @@ body {
   background: #536fa8;
 }
 
-/* line 106, ../scss/main.scss */
+/* line 105, ../scss/main.scss */
 .event-title {
   color: #536fa8;
   margin-bottom: 2px;
