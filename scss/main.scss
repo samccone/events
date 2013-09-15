@@ -1,7 +1,7 @@
 @import "compass";
 @import "compass/reset";
 
-$blue: rgb(59, 89, 152);
+$blue: #536FA8;
 $day-fill: #ececec;
 $internal-spacing: 8px;
 $flag-width: 4px;
@@ -10,13 +10,75 @@ $flag-width: 4px;
   @include box-sizing(border-box);
 }
 
+body {
+  font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+  padding: 50px 0;
+}
+
+.left {
+  float: left;
+}
+
+#events {
+  width:    100%;
+  margin:    0 auto;
+  max-width: 850px;
+  min-width: 630px;
+}
+
+#content {
+  width: 90%;
+}
+
+#times {
+  width: 10%;
+}
+
 .day {
-  width:      700px;
-  margin:     0 auto;
-  height:     1000px;
-  padding:    0 $internal-spacing;
-  position:   relative;
-  background: $day-fill;
+  height:       735px;
+  padding:      0 $internal-spacing;
+  position:     relative;
+  background:   $day-fill;
+  border-left:  solid 1px darken($day-fill, 10%);
+}
+
+.times {
+  padding-right: $internal-spacing;
+
+  li {
+    height:       30px;
+    text-align:   right;
+    line-height:  15px;
+  }
+
+  .med {
+    color:  #636363;
+    .time {
+      font: {
+        size:   13px;
+        weight: bold;
+      }
+    }
+  }
+
+  .small {
+    margin-left: 3px;
+    span {
+      display: none;
+    }
+  }
+}
+
+.small {
+  font-size: 9px;
+  color: #A3A3A3;
+}
+
+.events {
+  top:      0;
+  left:     2.5%;
+  width:    95%;
+  position: absolute;
 }
 
 .event {
@@ -25,9 +87,6 @@ $flag-width: 4px;
   position:     absolute;
   background:   #FFF;
   border-left:  0;
-  font: {
-    family: 'lucida grande', tahoma, verdana, arial, sans-serif;
-  }
 
   .copy {
     padding: $internal-spacing;
@@ -52,9 +111,4 @@ $flag-width: 4px;
     size:   13px;
     weight: bold;
   }
-}
-
-.event-location {
-  color: darken($day-fill, 25%);
-  font-size: 10px;
 }

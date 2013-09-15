@@ -3,19 +3,29 @@
   this.FE || (this.FE = {});
 
   this.layOutDay = FE.build = function(events) {
-    return this.FE.EventApp.Content.show(new FE.Views.Day({
+    var height;
+    this.FE.EventApp.Content.show(new FE.Views.Day({
       collection: new FE.Events(events)
     }));
+    height = Math.max(_.max(events, function(e) {
+      return e.end;
+    }).end / 60, 12);
+    this.FE.EventApp.Times.show(new FE.Views.Times({
+      start: 0,
+      end: height + 0.5
+    }));
+    return $('.day').css('height', "" + ((height + 0.5) * 60) + "px");
   };
 
   this.FE.EventApp = new Backbone.Marionette.Application();
 
   this.FE.EventApp.addRegions({
-    Content: '#content'
+    Content: '#content',
+    Times: '#times'
   });
 
   this.FE.EventApp.addInitializer(function() {
-    return window.layOutDay([
+    window.layOutDay([
       {
         start: 30,
         end: 150
@@ -28,6 +38,42 @@
       }, {
         start: 610,
         end: 670
+      }
+    ]);
+    return window.layOutDay([
+      {
+        start: 1,
+        end: 150
+      }, {
+        start: 10,
+        end: 190
+      }, {
+        start: 100,
+        end: 280
+      }, {
+        start: 10,
+        end: 250
+      }, {
+        start: 10,
+        end: 150
+      }, {
+        start: 0,
+        end: 200
+      }, {
+        start: 230,
+        end: 300
+      }, {
+        start: 0,
+        end: 900
+      }, {
+        start: 560,
+        end: 620
+      }, {
+        start: 11,
+        end: 200
+      }, {
+        start: 901,
+        end: 990
       }
     ]);
   });

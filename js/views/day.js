@@ -18,6 +18,12 @@
 
     Day.prototype.className = 'day';
 
+    Day.prototype.template = _.template("<div class='events'></div>");
+
+    Day.prototype.ui = {
+      'events': '.events'
+    };
+
     Day.prototype.appendHtml = function(collectionView, itemView, index) {
       var left, overlaps, width;
       overlaps = Math.max(1, collectionView.collection.groupFor(itemView.model).length - 1);
@@ -29,13 +35,13 @@
         'width': "" + width + "%",
         'height': "" + (itemView.model.length()) + "px"
       });
-      return this.$el.append(itemView.el);
+      return this.ui.events.append(itemView.el);
     };
 
     Day.prototype.itemView = FE.Views.Event;
 
     return Day;
 
-  })(Marionette.CollectionView);
+  })(Marionette.CompositeView);
 
 }).call(this);

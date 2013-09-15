@@ -1,8 +1,12 @@
 @FE ||= {}
 @FE.Views ||= {}
 
-class FE.Views.Day extends Marionette.CollectionView
+class FE.Views.Day extends Marionette.CompositeView
   className: 'day'
+  template: _.template("<div class='events'></div>")
+
+  ui:
+    'events': '.events'
 
   appendHtml: (collectionView, itemView, index) ->
     overlaps =
@@ -17,6 +21,6 @@ class FE.Views.Day extends Marionette.CollectionView
       'width':  "#{width}%"
       'height': "#{itemView.model.length()}px"
 
-    @$el.append itemView.el
+    @ui.events.append itemView.el
 
   itemView: FE.Views.Event
